@@ -127,8 +127,8 @@ const Navbar = () => {
 
       {pathname === "/myAccount/myOrders" ||pathname === "/myAccount/myProfile" ||pathname === "/singIn" ||pathname === "/register" 
       ||pathname === "/shoppingCart" || /^\/details\/\d+$/.test(pathname) ?  
-      <li className="flex flex-1 items-center justify-center md:justify-center w-full md:w-auto mt-4 md:mt-0">
-  <span className="text-lg font-semibold text-white">Innovation that transforms, technology that connects</span></li> 
+      <li className="flex items-center justify-center w-full md:w-auto pb-8 md:pb-0">
+  <span className="text-400 font-semibold text-primary-50 text-center px-4">Innovation that transforms, technology that connects</span></li> 
 
 :(<div className="flex flex-col items-center md:items-start p-4 md:p-4 w-full mx-auto max-w-screen-lg">
           <form onSubmit={handleSearch}

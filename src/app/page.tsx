@@ -7,7 +7,7 @@ export default function Home() {
   return (
     
     <div className="bg-neutral-50">
-l    <Carousel/>
+    <Carousel/>
       <Product/>
     </div>
   );

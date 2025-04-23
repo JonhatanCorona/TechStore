@@ -16,7 +16,7 @@ if (!user) {
 }
 
 return (
-    <div className="w-full  bg-secondary-700 p-16 rounded-lg overflow-hidden hover:shadow-md transition-all">
+   <div className="w-full bg-secondary-700 p-4 sm:p-6 lg:p-16 rounded-lg overflow-hidden hover:shadow-md transition-all">
         <motion.div
     className="max-w-6xl w-full px-10 py-6"
     initial={{ opacity: 0 }}
