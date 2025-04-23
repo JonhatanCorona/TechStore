@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useAuth } from '@/Context';
+import Swal from 'sweetalert2';
 import Cookies from 'js-cookie';
 
 
@@ -28,13 +29,29 @@ const Navbar = () => {
 
 
   const handleLogout = () => {
-    localStorage.removeItem('loginUser');
-    localStorage.removeItem('cart');
-    Cookies.remove("loginUser"); // Eliminar el usuario de localStorage y cookies
-    setUser(null); // Actualizar el estado de usuario en el contexto
-      window.location.href = '/';
-};
-
+    Swal.fire({
+      title: 'Log out?',
+      text: 'Are you sure you want to log out?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, log out',
+      cancelButtonText: 'Cancel',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem('loginUser');
+        localStorage.removeItem('cart');
+        Cookies.remove('loginUser');
+        setUser(null);
+        Swal.fire('Logging out...', '', 'success');
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 1500);
+      }
+    });
+  };
+  
   const showHomeLink =
   pathname === "/singIn" ||
   pathname === "/register" ||
