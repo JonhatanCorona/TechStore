@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 export async function helperOrder(token: string, products: number[]) {
     try {
         const baseUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -18,7 +20,11 @@ export async function helperOrder(token: string, products: number[]) {
 }
 
         const data = await res.json();
-        alert("Purchase completed successfully");
+            await Swal.fire({
+                title: 'Purchase!',
+                text: 'Purchase completed successfully.',
+                confirmButtonColor: '#515561',
+    });
         return data;
     } catch (error) {
         console.error("Error while making the purchase:", error);

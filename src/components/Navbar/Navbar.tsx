@@ -22,10 +22,17 @@ const Navbar = () => {
     if (search.trim().length) {
       router.push(`/products/${search.trim()}`);
     } else {
-      alert("Nothing to search");
+      Swal.fire({
+        title: 'Empty Search',
+        text: 'Nothing to search.',
+        confirmButtonColor: '#515561',
+        confirmButtonText: 'OK'
+      });
     }
+  
     setSearch("");
   };
+  
 
 
   const handleLogout = () => {
