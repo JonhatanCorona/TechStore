@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import MyOrders from "@/components/MyOrders/MyOrders";
 import Profile from "@/components/MyProfile/MyProfile";
 
-const MyAccount = async ({ params }: { params: { section: string } }) => {
+const MyAccount = async ({ params }: { params : Promise<{ section : string }> }) => {
   const { section } = await params;
 
 
