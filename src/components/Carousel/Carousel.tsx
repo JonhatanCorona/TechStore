@@ -51,10 +51,10 @@ const Carousel = () => {
         <>
         <div
         onClick={handleNext}
-        className={`cursor-pointer mb-7 mx-15 flex flex-col h-80 items-center justify-center rounded-xl transition-all duration-500 ${promotions[index].bgColor} space-y-2`}
+        className={`cursor-pointer mb-7 lg:mx-15 flex flex-col h-80 items-center justify-center rounded-xl transition-all duration-500 ${promotions[index].bgColor} space-y-2`}
 >
-            <h2 className='text-primary-50 title-600 font-bold'>{promotions[index].message}</h2>
-            <p className='text-primary-50 text-300'>{promotions[index].message2}</p>
+            <h2 className='text-primary-50 title-600 font-bold text-center'>{promotions[index].message}</h2>
+            <p className='text-primary-50 text-300 text-center'>{promotions[index].message2}</p>
     <Link href="/singIn">
     <button className="explore-button no-underline py-2 px-4 mt-4 bg-primary-100 text-200 text-secondary-800 rounded-lg shadow-lg
     transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl active:translate-y-0.5 font-semibold">

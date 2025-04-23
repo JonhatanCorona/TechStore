@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className='flex flex-col' >
       <nav>
   <ul className="flex md:flex-row md:justify-end ml-auto w-fit pt-3 pb-2 px-8 bg-secondary-700 
-  text-primary-50 rounded-t-lg rounded-b-lg lg:gap-24 gap-4 font-semibold">
+  text-primary-50 rounded-t-lg rounded-b-lg lg:gap-24 gap-8 font-semibold">
     {!user && (pathname === "/" || pathname === "/singIn" || pathname.startsWith("/products")) && (
         <li>
           <Link href="/register">Register</Link>
@@ -147,7 +147,7 @@ const Navbar = () => {
           </form>
           <div className="w-full">
             <nav>
-            <ul className="flex lg:justify-between g-2 w-full lg:max-w-[900px] mx-auto px-4">
+            <ul className="flex lg:justify-between justify-evenly w-full lg:max-w-[900px] mx-auto px-4">
                 <li>
                   <Link href="/">All</Link>
                 </li>
