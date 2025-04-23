@@ -33,7 +33,7 @@ const Login = () => {
             className="flex flex-col bg-primary-800 gap-3 p-10 items-center shadow-2xl rounded-lg"
             >
             <p className="title-400 text-secondary-50 font-semibold mb-6">
-                Sing In
+                Sign In
             </p>
 
             <div>

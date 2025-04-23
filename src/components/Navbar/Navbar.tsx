@@ -30,12 +30,11 @@ const Navbar = () => {
 
   const handleLogout = () => {
     Swal.fire({
-      title: 'Log out?',
-      text: 'Are you sure you want to log out?',
-      icon: 'warning',
+      title: 'Sing Out?',
+      text: 'Are you sure you want to sing out?',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#515561', 
+      cancelButtonColor: '#45433a',  
       confirmButtonText: 'Yes, log out',
       cancelButtonText: 'Cancel',
     }).then((result) => {
@@ -44,10 +43,9 @@ const Navbar = () => {
         localStorage.removeItem('cart');
         Cookies.remove('loginUser');
         setUser(null);
-        Swal.fire('Logging out...', '', 'success');
         setTimeout(() => {
           window.location.href = '/';
-        }, 1500);
+        });
       }
     });
   };

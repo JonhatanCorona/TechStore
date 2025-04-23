@@ -8,7 +8,8 @@ const Footer: React.FC = () => {
   const pathname = usePathname();
   const currentYear: number = new Date().getFullYear();
 
-  const isAuthPage = pathname === '/singIn' || pathname === '/register' || /^\/details\/\d+$/.test(pathname)|| pathname === '/myAccount/myProfile'|| pathname === '/myAccount/myOrders';
+  const isAuthPage = pathname === '/singIn' || pathname === '/register' || /^\/details\/\d+$/.test(pathname)|| 
+  pathname === '/myAccount/myProfile'|| pathname === '/myAccount/myOrders'|| pathname === '/shoppingCart' ;
 
   if (isAuthPage) {
     return (
