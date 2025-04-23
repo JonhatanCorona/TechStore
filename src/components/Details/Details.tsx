@@ -11,7 +11,7 @@ const DetailsProduct = ({ product }: { product: IProducts }) => {
     </div>
   
     <div className="flex flex-col lg:flex-row w-full">
-  <div className="w-full lg:w-1/2 min-h-[50vh] flex justify-center items-center mx-4 lg:ml-10 overflow-hidden">
+  <div className="w-full lg:w-1/2 min-h-[45vh] flex justify-center items-center mx-4 lg:ml-10 overflow-hidden">
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img
       src={product.image}
