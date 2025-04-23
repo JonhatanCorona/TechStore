@@ -5,7 +5,7 @@ import AddToCart from '../Buttons/AddToCart';
 const DetailsProduct = ({ product }: { product: IProducts }) => {
   return (
   <>
-  <div  className="flex flex-col bg-secondary-50">
+  <div  className="flex flex-col bg-secondary-50 w-full max-w-screen-xl mx-auto">
     <div className="w-full flex justify-center my-8">
       <h1 className="text-center title-600 text-primary-800 font-bold">{product.name}</h1>
     </div>
