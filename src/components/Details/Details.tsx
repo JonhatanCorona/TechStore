@@ -11,14 +11,14 @@ const DetailsProduct = ({ product }: { product: IProducts }) => {
     </div>
   
     <div className="flex flex-col lg:flex-row w-full">
-    <div className="w-full lg:w-1/2 min-h-[50vh] flex justify-center items-center mx-4 lg:ml-10">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-full object-contain rounded-lg shadow-2xl transition-transform hover:scale-105"
-      />
-    </div>
+  <div className="w-full lg:w-1/2 min-h-[50vh] flex justify-center items-center mx-4 lg:ml-10 overflow-hidden">
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
+      src={product.image}
+      alt={product.name}
+      className="w-full h-full object-contain max-w-full rounded-lg shadow-2xl transition-transform hover:scale-105"
+    />
+  </div>
   
     <div className="w-full lg:w-2/3 p-4 mr-10 px-10">
       <div>
