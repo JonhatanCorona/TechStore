@@ -51,7 +51,7 @@ const Carousel = () => {
         <>
         <div
         onClick={handleNext}
-        className={`cursor-pointer mb-7 lg:mx-15 flex flex-col h-80 items-center justify-center rounded-xl transition-all duration-500 ${promotions[index].bgColor} space-y-2`}
+        className={`cursor-pointer my-6 lg:mx-15 flex flex-col h-80 items-center justify-center rounded-xl transition-all duration-500 ${promotions[index].bgColor} space-y-2`}
 >
             <h2 className='text-primary-50 title-600 font-bold text-center'>{promotions[index].message}</h2>
             <p className='text-primary-50 text-300 text-center'>{promotions[index].message2}</p>
