@@ -18,8 +18,10 @@ const Products = async  ({ params }: { params : Promise<{ search : string }> }) 
     return (
 
         <div>
-        <div className="cursor-pointer lg:my-6 mx-15 flex flex-col h-40 items-center justify-center rounded-xl bg-secondary-800">
-        <span className="text-400 font-semibold text-center text-primary-50">Innovation that transforms, technology that connects</span>
+        <div className="cursor-pointer my-4 sd:my-4 lg:my-6 mx-0 lg:mx-15 flex flex-col h-40 items-center justify-center rounded-xl bg-secondary-800">
+    <span className="text-400 font-semibold text-center text-primary-50">
+    Innovation that transforms, technology that connects
+    </span>
         </div>
 
     <div className="container mx-auto">
