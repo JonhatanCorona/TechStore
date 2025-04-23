@@ -54,11 +54,12 @@ const MyOrders = () => {
   )}
       {orders.map((order) => (
         <div
-          key={order.id}
-          onClick={() => toggleOrder(order.id)}
-          className="flex flex-col bg-secondary-700 rounded-lg p-4 shadow-lg mb-4 items-center w-full max-w-full sm:max-w-[350px] lg:max-w-[950px]"
-        >
-          <div  className="flex flex-row items-center gap-4 lg:gap-64 space-y-2 mx-16">
+  key={order.id}
+  onClick={() => toggleOrder(order.id)}
+  className="flex flex-col bg-secondary-700 rounded-lg p-4 shadow-lg mb-4 items-center w-full max-w-full sm:max-w-[350px] lg:max-w-[950px]"
+>
+  <div className="flex flex-row items-center gap-4 sm:gap-6 lg:gap-8 space-y-2 sm:mx-4 lg:mx-16">
+
           <p className="text-300 font-semibold text-primary-50 text-center">
           Order  <br /> #{order.id}
           </p>

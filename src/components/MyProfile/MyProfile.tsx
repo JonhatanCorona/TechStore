@@ -16,13 +16,13 @@ if (!user) {
 }
 
 return (
-   <div className="w-full bg-secondary-700 p-4 sm:p-6 lg:p-16 rounded-lg overflow-hidden hover:shadow-md transition-all">
-        <motion.div
-    className="max-w-6xl w-full px-10 py-6"
+<div className="w-full bg-secondary-700 p-4 sm:p-6 lg:p-16 rounded-lg overflow-hidden hover:shadow-md transition-all">
+    <motion.div
+    className="max-w-6xl w-full px-4 sm:px-6 lg:px-10 py-6 mx-auto"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    transition={{ duration: 2, ease: 'easeOut' }}
->
+    transition={{ duration: 2, ease: 'easeOut' }}>
+
         <h1 className="text-center text-primary-50 text-500 font-bold mb-16">My Profile</h1>
 
         <div className="flex flex-col lg:flex-row justify-center items-start gap-x-48">
