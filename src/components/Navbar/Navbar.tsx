@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className='flex flex-col' >
       <nav>
   <ul className="flex md:flex-row md:justify-end ml-auto w-fit pt-3 pb-2 px-8 bg-secondary-700 
-  text-primary-50 rounded-t-lg rounded-b-lg gap-24 font-semibold">
+  text-primary-50 rounded-t-lg rounded-b-lg lg:gap-24 gap-4 font-semibold">
     {!user && (pathname === "/" || pathname === "/singIn" || pathname.startsWith("/products")) && (
         <li>
           <Link href="/register">Register</Link>
@@ -121,7 +121,7 @@ const Navbar = () => {
       <div className="flex flex-col md:flex-row gap-8 bg-primary-800 text-secondary-50">
       <div className="flex justify-center md:justify-start w-full md:w-auto px-4 md:px-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-  <img src="/Logo.png" alt="Logo" className="w-20 h-20 ml-4 mt-2 md:w-24 md:h-24" />
+  <img src="/Logo.png" alt="Logo" className="w-20 h-20 lg:ml-4 mt-2 md:w-24 md:h-24" />
   <h1 className="pt-10 title-500 font-bold">TechStore</h1>
       </div>
 
@@ -147,7 +147,7 @@ const Navbar = () => {
           </form>
           <div className="w-full">
             <nav>
-            <ul className="flex justify-between w-full max-w-[900px] mx-auto px-4">
+            <ul className="flex lg:justify-between g-2 w-full lg:max-w-[900px] mx-auto px-4">
                 <li>
                   <Link href="/">All</Link>
                 </li>
