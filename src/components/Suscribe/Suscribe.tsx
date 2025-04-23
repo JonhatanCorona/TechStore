@@ -24,8 +24,8 @@ const Suscribe = () => {
     }
   };
   return (
-    <div className="flex flex-col bg-primary-800 lg:py-16 mx-0 lg:mx-15 rounded-2xl shadow-2xl">
-    <div className='flex flex-col items-center pt-4'>
+<div className="flex flex-col bg-primary-800 py-6 lg:py-16 px-4 sm:px-6 mx-0 lg:mx-15 rounded-2xl shadow-2xl">
+<div className="flex flex-col items-center">
         <h1 className='title-600 font-bold text-secondary-50 text-center'>Subscribe to Our Newsletter</h1>
         <h3 className='pb-4 text-200 text-secondary-50 text-center'>Get the latest news, exclusive offers, and updates delivered straight to your inbox.</h3>
     </div>
