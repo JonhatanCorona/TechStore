@@ -136,45 +136,42 @@ const Navbar = () => {
     </ul>
 
 :(<div className="flex flex-col items-center md:items-start p-4 md:p-4 w-full mx-auto max-w-screen-lg">
-          <form onSubmit={handleSearch}
-            className="flex w-full max-w-[900px] gap-4 mb-4 md:pl-32 px-4">
-            <input value={search} onChange={(e) => setSearch(e.target.value) }
-            className="bg-secondary-50 text-primary-900 flex-grow p-1 rounded border border-secundary-50
-            focus:outline-none focus:ring-2 focus:ring-secondary-700 "
-            type="text" 
-            name="search" 
-            placeholder="Search by name..."/>
-            <button type='submit'
-            className='p-1 bg-secondary-200 text-300 text-primary-900 rounded-lg shadow-lg
-            transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl active:scale-95'>
-              Search
-            </button>
-          </form>
-          <div className="w-full">
-            <nav>
-            <ul className="flex lg:justify-between justify-evenly w-full lg:max-w-[900px] mx-auto px-4">
-                <li>
-                  <Link href="/">All</Link>
-                </li>
-                <li>
-                  <Link href="/products/1">Smartphones</Link>
-                </li>
-                <li>
-                  <Link href="/products/2">Laptops</Link>
-                </li>
-                <li>
-                  <Link href="/products/3">Tablets</Link>
-                </li>
-                <li>
-                  <Link href="/products/5">Headphones</Link>
-                </li>
-                <li>
-                  <Link href="/products/others">Others</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
+  <form
+    onSubmit={handleSearch}
+    className="flex flex-wrap justify-center md:justify-start w-full max-w-[900px] gap-4 mb-4 px-4"
+  >
+    <input
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      className="bg-secondary-50 text-primary-900 flex-grow p-1 rounded border border-secondary-50
+      focus:outline-none focus:ring-2 focus:ring-secondary-700"
+      type="text"
+      name="search"
+      placeholder="Search by name..."
+    />
+    <button
+      type="submit"
+      className="p-1 bg-secondary-200 text-300 text-primary-900 rounded-lg shadow-lg
+      transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl active:scale-95"
+    >
+      Search
+    </button>
+  </form>
+
+  <div className="w-full">
+    <nav>
+      <ul className="flex flex-wrap justify-center lg:justify-between w-full lg:max-w-[900px] mx-auto px-4 gap-2 sm:gap-4">
+        <li><Link href="/">All</Link></li>
+        <li><Link href="/products/1">Smartphones</Link></li>
+        <li><Link href="/products/2">Laptops</Link></li>
+        <li><Link href="/products/3">Tablets</Link></li>
+        <li><Link href="/products/5">Headphones</Link></li>
+        <li><Link href="/products/others">Others</Link></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
         )}
       </div>
     </>
