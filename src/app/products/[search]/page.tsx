@@ -5,11 +5,9 @@ import { notFound } from "next/navigation";
 import React from "react";
 
 
-interface ProductsProps {
-    params: { search: string };
-}
 
-const Products = async ({ params }: ProductsProps) => {
+
+const Products = async  ({ params }: { params : Promise<{ search : string }> }) => {
     const { search } = await params;
     const products: IProducts[] | undefined = await helperSearch(search);
 
