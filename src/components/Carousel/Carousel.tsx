@@ -1,6 +1,7 @@
 "use client"
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react'
 
 interface IPromotion {
@@ -49,9 +50,12 @@ const Carousel = () => {
 
     return (
         <>
-        <div
-        onClick={handleNext}
-        className={`cursor-pointer my-6 lg:mx-15 flex flex-col h-80 items-center justify-center rounded-xl transition-all duration-500 ${promotions[index].bgColor} space-y-2`}
+<motion.div 
+    onClick={handleNext}
+    className={`cursor-pointer my-6 lg:mx-15 flex flex-col h-80 items-center justify-center rounded-xl transition-all duration-500 ${promotions[index].bgColor} space-y-2`}
+    initial={{ opacity: 0 }}  
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5, ease: 'easeOut' }}
 >
             <h2 className='text-primary-50 title-600 font-bold text-center'>{promotions[index].message}</h2>
             <p className='text-primary-50 text-300 text-center'>{promotions[index].message2}</p>
@@ -61,7 +65,7 @@ const Carousel = () => {
         Explore
     </button>
     </Link>
-</div>
+</motion.div>
 
     </>
     );

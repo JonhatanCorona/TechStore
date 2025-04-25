@@ -1,3 +1,4 @@
+
 import React from "react";
 import Card from "../Card/Card"; 
 import Suscribe from "../Suscribe/Suscribe"
@@ -7,9 +8,10 @@ import helperProduct from "@/helpers/Helpers/helperProduct";
 
 const Product = async () => {
   const products = await helperProduct();
+
   return (
     <div className="container mx-auto">
-    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-4/5 mx-auto">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-4/5 mx-auto ">
       {products.map((product, index) => (
         <React.Fragment key={product.id}>
           <li className="min-h-[200px]">

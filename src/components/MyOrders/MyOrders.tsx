@@ -1,7 +1,7 @@
 
 "use client"
 
-import { useAuth } from '@/Context';
+import { useAuth } from '@/Context/Auth';
 import helperGetOrder from '@/helpers/Helpers/helperCart';
 import { IProducts } from '@/interfaces/interfaces';
 import React, { useEffect, useState } from 'react'
@@ -88,7 +88,7 @@ const MyOrders = () => {
                 <span
                   className={`inline-block text-200 text-primary-50 px-2 py-1 mt-1 rounded-full ${
                     order.status === "approved"
-                      ? "bg-primary-200 text-secondary-800"
+                      ? "bg-primary-800 text-secondary-100"
                       : "bg-secondary-200 *:text-primary-800"
                   }`}
                 > 
@@ -104,13 +104,21 @@ const MyOrders = () => {
                       key={product.id}
                       className="p-2 bg-primary-200 rounded-md flex flex-row justify-between"
                     >
-                      <p className="text-secondary-800 font-medium text-center">{product.name}</p>
-                      <p className="text-secondary-800 font-medium text-center">${product.price}</p>
+                    <div className='flex flex-row'>   
+                    <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-12 w-12 object-cover transition-transform hover:scale-105"
+                    />
+                      <p className="text-secondary-800 font-medium text-center p-2 ">{product.name}</p>
+                    </div>
+            
+                      <p className="text-secondary-800 font-medium text-center pt-2">${product.price}</p>
                     </div>
                   ))}
   
-                  <div className="mt-4 bg-primary-100 p-2 rounded-md">
-                    <p className="text-secondary-900 font-bold text-center">
+                  <div className="mt-4 bg-primary-900 p-2 rounded-md ">
+                    <p className="text-secondary-100 font-bold text-center">
                       Total: ${calculateTotal(order.products).toFixed(2)}
                     </p>
                   </div>

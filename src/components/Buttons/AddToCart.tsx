@@ -1,6 +1,7 @@
 "use client";
 
-import { useAuth } from "@/Context";
+import { useAuth } from "@/Context/Auth";
+import { useCart } from "@/Context/Cart";
 import { IProducts } from "@/interfaces/interfaces";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
@@ -13,53 +14,51 @@ interface AddToCartProps {
 const AddToCart = ({ product }: AddToCartProps) => {
     const router = useRouter();
     const { user } = useAuth();
+    const { cart, setCart } = useCart(); // ⬅️ usar contexto
 
     const handleAddToCart = () => {
-    if (!user?.token) {
-        Swal.fire({
-        title: 'You must be logged in to add this product to the cart',
-        text: 'Please log in or register to continue.',
-        confirmButtonText: 'Sign In',
-        cancelButtonText: 'Register',
-        confirmButtonColor: '#45433a',
-        cancelButtonColor: '#515561',
-        showCancelButton: true,
-    }).then((result) => {
-        if (result.isConfirmed) {
-                  // Redirige al usuario a la página de inicio de sesión
-            router.push("/singIn");
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-                  // Redirige al usuario a la página de registro
-            router.push("/register");
-            }
-        });
-    return;
-}
+        if (!user?.token) {
+            Swal.fire({
+                title: 'You must be logged in to add this product to the cart',
+                text: 'Please log in or register to continue.',
+                confirmButtonText: 'Sign In',
+                cancelButtonText: 'Register',
+                confirmButtonColor: '#45433a',
+                cancelButtonColor: '#515561',
+                showCancelButton: true,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    router.push("/singIn");
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    router.push("/register");
+                }
+            });
+            return;
+        }
 
-    const cart: IProducts[] = JSON.parse(localStorage.getItem("cart") || "[]");
-    const alreadyInCart = cart.some((item) => item.id === product.id);
+        const alreadyInCart = cart.some((item) => item.id === product.id);
+        if (alreadyInCart) {
+            Swal.fire({
+                title: 'Only 1 of each product per purchase',
+                text: `You can only have one ${product.name} in the cart.`,
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#45433a',
+            });
+            return;
+        }
 
-    if (alreadyInCart) {
+        // ✅ Actualizar estado global del carrito
+        setCart([...cart, product]);
+
         Swal.fire({
-            title: 'Only 1 of each product per purchase',
-            text: `You can only have one ${product.name} in the cart.`,
+            title: `${product.name} added to cart`,
+            text: 'The product has been successfully added to your cart.',
             confirmButtonText: 'OK',
-            confirmButtonColor: '#45433a',
+            confirmButtonColor: '#515561',
+        }).then(() => {
+            router.push("/"); 
         });
-        return;
-    }
-
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    Swal.fire({
-        title: `${product.name} added to cart`,
-        text: 'The product has been successfully added to your cart.',
-        confirmButtonText: 'OK',
-        confirmButtonColor: '#515561',
-    }).then(() => {
-        router.push("/"); 
-    });
-};
+    };
 
 return (
     <button

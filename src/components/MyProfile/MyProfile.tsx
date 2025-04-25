@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { useAuth } from '@/Context/index';
+import { useAuth } from '@/Context/Auth';
 import React from 'react';
 
 const Profile: React.FC = () => {

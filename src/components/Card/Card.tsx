@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import { IProducts } from "../../interfaces/interfaces";
 import Link from "next/link";
 import AddToCart from "../Buttons/AddToCart";
@@ -8,7 +9,7 @@ interface CardProps {
 }
 
 const Card = ({ product }: CardProps) => {
-
+  
   return (
     <div className="flex flex-col h-96 rounded-lg overflow-hidden hover:shadow-md transition-all">
       <div className="aspect-square overflow-hidden">

@@ -3,6 +3,7 @@ import { IProducts } from "@/interfaces/interfaces";
 const helperProduct = async (): Promise<IProducts[]> => {
     try {
         const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+        await new Promise(resolve => setTimeout(resolve, 3000));
         const res = await fetch(`${baseUrl}/products`, {
         next: { revalidate: 60 }, 
     });

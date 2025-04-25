@@ -14,7 +14,6 @@ const Footer: React.FC = () => {
   if (isAuthPage) {
     return (
       <footer className="mt-10 px-4 sm:px-6 lg:px-8 bg-secondary-700">
-        {/* Bottom Bar solo para login y register */}
         <div className="border-t border-zinc-800 mt-6 sm:mt-8 pt-4 sm:pt-6 flex flex-col sm:flex-row justify-center items-center">
           <p className="title-200 text-primary-100">&copy; {currentYear} TechStore. All rights reserved.</p>
         </div>

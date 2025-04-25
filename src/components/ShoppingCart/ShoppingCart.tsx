@@ -1,27 +1,22 @@
 "use client"
 
-import { useAuth } from '@/Context';
+import { useAuth } from '@/Context/Auth';
+import { useCart } from '@/Context/Cart';
 import { helperOrder } from '@/helpers/Helpers/helperCart';
 import { IProducts } from '@/interfaces/interfaces';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 const ShoppingCart = () => {
     const router = useRouter();
     const { user } = useAuth();
-    const [cart, setCart] = useState<IProducts[]>([]);
+    const  {cart, setCart} = useCart()
     const [totalCart, setTotalCart] = useState<number>(0);
 
-    useEffect(()=> { 
-        const cartStore: IProducts[] = JSON.parse(localStorage.getItem("cart") || "[]");
-        if (cartStore) {
-            let totalCart = 0;
-            cartStore.map((product : IProducts)=> 
-            totalCart = totalCart + product.price)
-            setTotalCart(totalCart)
-            setCart(cartStore)
-        }
-    }, [])
+    useEffect(() => {
+        const total = cart.reduce((acc, product) => acc + product.price, 0);
+        setTotalCart(total);
+    }, [cart]);
 
     const handleRemoveFromCart = (productId: number) => {
         // Eliminar producto del carrito
@@ -49,23 +44,34 @@ const ShoppingCart = () => {
 
 return (
         <div className="w-full px-4 sm:px-6 lg:px-12 py-8 bg-secondary-50 rounded-none lg:rounded-xl">
-            <h2 className="title-500 font-bold mb-6 text-primary-800 text-center lg:text-left">
+            <h2 className="title-500 font-bold mb-6 text-primary-800 text-center">
             My Cart
             </h2>
     
         <div className="space-y-4">
         {cart.length > 0 ? (
             cart.map((product) => (
-            <div key={product.id} className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-secondary-100 p-4 rounded-lg shadow-sm">
+            <div key={product.id} className="flex flex-col sm:flex-row items-start justify-between sm:items-center bg-secondary-100 p-4 rounded-lg shadow-sm">
+                <div className='flex flex-row'>
                 <div>
+                <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-16 w-16 object-cover transition-transform hover:scale-105"
+                    />
+                </div>
+                <div className='p-2'>
                 <h3 className="text-300 font-semibold text-primary-800">{product.name}</h3>
                 <p className="text-200 text-primary-700">${product.price.toFixed(2)}</p>
                 </div>
+                </div>
+                <div>
             <button
                 className="text-secondary-700 font-medium mt-2 sm:mt-0 hover:underline"
                 onClick={() => handleRemoveFromCart(product.id)}>
                 Remove
             </button>
+            </div>
             </div>
         ))
         ) : (
