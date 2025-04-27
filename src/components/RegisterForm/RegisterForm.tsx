@@ -2,15 +2,12 @@
 import { IUserDto } from "@/interfaces/interfaces";
 import { initialValues, validationSchema, onSubmit } from "../../hook/useRegisterForm";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
-import { useRouter } from "next/navigation";
 
 
 
 const RegisterForm = () => {
-        const router = useRouter();  // Hook useRouter
         const handleSubmit = async (values: IUserDto, formikHelpers: FormikHelpers<IUserDto>) => {
-                await onSubmit(values, formikHelpers);  
-                router.push('/singIn');  
+                await onSubmit(values, formikHelpers);   
                 };
 
                 

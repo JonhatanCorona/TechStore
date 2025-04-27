@@ -16,7 +16,7 @@ if (!user) {
 }
 
 return (
-<div className="w-full overflow-x-hidden bg-secondary-700 py-4 sm:px-4 sm:py-6 lg:px-10 lg:py-16 overflow-hidden hover:shadow-md transition-all">
+<div className="w-full overflow-x-hidden bg-secondary-700 rounded-2xl py-4 sm:px-4 sm:py-6 lg:px-10 lg:py-16 overflow-hidden hover:shadow-md transition-all">
     <motion.div
     className="max-w-6xl w-full px-4 sm:px-6 lg:px-10 lg:py-6 mx-auto"
     initial={{ opacity: 0 }}
@@ -26,15 +26,11 @@ return (
 
         <div className="flex flex-col lg:flex-row justify-center items-start">
           {/* Avatar + Nombre */}
-            <div className="flex flex-col items-center w-full lg:w-1/2 gap-6">
-            <div className="h-36 w-36 md:h-40 md:w-40 rounded-full bg-primary-200 overflow-hidden shadow-xl">
-                
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                src="/Avatar.png"
-                alt="Profile"
-                className="h-full w-full object-cover transition-transform hover:scale-105"
-            />
+            <div className="flex flex-col items-center w-full lg:w-1/2 gap-6 lg:mt-10">
+            <div className="h-36 w-36 md:h-40 md:w-40 rounded-full bg-primary-900 overflow-hidden shadow-xl flex items-center justify-center">
+            <span className="title-800 md:title-600 font-bold text-secondary-100">
+                {user.user.name.charAt(0).toUpperCase()}
+            </span>
             </div>
             <h1 className="text-center text-primary-50 text-500 font-bold mb-16">My Profile</h1>
         </div>

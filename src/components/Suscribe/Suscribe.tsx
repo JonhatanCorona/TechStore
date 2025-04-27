@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
+import Swal from 'sweetalert2';
 
 const Suscribe = () => {
 
@@ -19,7 +20,11 @@ const Suscribe = () => {
       setError("Invalid email");
     } else {
       setError('');
-      alert(`Subscription completed successfully ${email}`);
+      Swal.fire({
+        title: 'Subscription Successful!',
+        text: `Thank you for subscribing with ${email}`,
+        confirmButtonColor: '#45433a',
+      });
       setEmail("");
     }
   };

@@ -14,15 +14,27 @@ const register = async (userData: IUserDto) => {
         });
         return res.data;
 
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error register:', error);
-        await Swal.fire({
-        title: 'Register Failed',
-        text: 'The user could not be registered',
-        confirmButtonColor: '#45433a',
-    });
+
+        // Verificar si el error es el de usuario ya existente
+        if (error.response.data.message === "User already exists") {
+            await Swal.fire({
+                title: 'Registration Failed',
+                text: 'The email is already being used',
+                confirmButtonColor: '#45433a',
+            });
+        } else {
+            // Si es otro tipo de error
+            await Swal.fire({
+                title: 'Register Failed',
+                text: 'The user could not be registered',
+                confirmButtonColor: '#45433a',
+            });
+        }
     }
 };
+
 
 export default register;
 

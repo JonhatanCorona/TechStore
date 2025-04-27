@@ -63,7 +63,7 @@ const MyOrders = () => {
       ) : (
         <div className="w-full flex flex-col px-2 lg:px-6 py-8 bg-secondary-50 rounded-none lg:rounded-x">
           {orders.length === 0 && (
-            <p className="w-full text-center text-secondary-600 text-lg font-medium">
+            <p className="w-full text-center text-secondary-600 text-500 font-medium">
               No orders have been placed yet.
             </p>
           )}
@@ -71,7 +71,7 @@ const MyOrders = () => {
             <div
               key={order.id}
               onClick={() => toggleOrder(order.id)}
-              className="flex flex-col bg-secondary-700 rounded-lg p-4 shadow-lg mb-4 items-center w-full max-w-full sm:max-w-[350px] lg:max-w-[950px]"
+              className="flex flex-col bg-secondary-700 rounded-lg p-4 shadow-lg mb-4 items-center w-full max-w-full sm:max-w-[300px] lg:max-w-[950px]"
             >
               <div className="flex flex-row items-center gap-4 lg:gap-64 space-y-2 mx-4 sm:mx-6 md:mx-10 lg:mx-16">
                 <p className="text-300 font-semibold text-primary-50 text-center">

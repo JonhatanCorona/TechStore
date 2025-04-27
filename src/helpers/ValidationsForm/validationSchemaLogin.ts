@@ -2,17 +2,17 @@ import * as Yup from "yup";
 
 
 export const validationSchemaLogin = Yup.object({
-email: Yup.string()
-    .required("El campo email es obligatorio")
-    .email("El email es invalido"),
+    email: Yup.string()
+    .required("Email is required")
+    .email("Invalid email"),
 
-password: Yup.string()
-    .required("La contraseña es obligatoria")
-    .min(8, "Debe tener al menos 8 caracteres")
-    .matches(/[0-9]/, "Debe contener al menos un número")
+    password: Yup.string()
+    .required("Password is required")
+    .min(8, "Must be at least 8 characters long")
+    .matches(/[0-9]/, "Must contain at least one number")
     .test(
-        "no-espacios",
-        "La contraseña no puede contener espacios",
+        "no-spaces",
+        "Password cannot contain spaces",
         (value) => !/\s/.test(value)
     ),
 });
