@@ -85,7 +85,8 @@ return (
     </div>
 
     <button onClick={handChekout}
-    className="mt-6 w-full bg-primary-800 hover:bg-gray-700 text-secondary-50 font-semibold py-2 px-4 rounded-lg transition duration-200">
+    className="mt-6 w-full bg-primary-800 hover:bg-gray-700 text-secondary-50 font-semibold py-2 px-4 rounded-lg 
+    transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl active:scale-95">
         Proceed to Checkout
     </button>
     </div>
