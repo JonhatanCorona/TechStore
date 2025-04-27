@@ -21,10 +21,10 @@ export const validationSchemaRegister = Yup.object({
     ),
 
     address: Yup.string()
-    .required("DNI field is required"),
+    .required("Address is required"),
 
     phone: Yup.string()
-    .required("Username is required")
+    .required("Phone is required")
     .max(12, "Maximum 12 characters"),
 
     });

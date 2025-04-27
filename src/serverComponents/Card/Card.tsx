@@ -1,8 +1,6 @@
-"use client"
-import React, { useEffect, useState } from "react";
 import { IProducts } from "../../interfaces/interfaces";
 import Link from "next/link";
-import AddToCart from "../Buttons/AddToCart";
+import AddToCart from "../../components/Buttons/AddToCart";
 
 interface CardProps {
   product: IProducts;
@@ -17,7 +15,7 @@ const Card = ({ product }: CardProps) => {
         <img
           src={product.image}
           alt={product.name}
-          className="h-full w-full object-cover transition-transform hover:scale-105"
+          className="h-full w-full object-cover transition-transform hover:scale-105 sm:scale-100 scale-95"
         />
       </div>
 

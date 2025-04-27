@@ -1,7 +1,6 @@
-import Card from "@/components/Card/Card";
+import Card from "@/serverComponents/Card/Card";
 import helperSearch from "@/helpers/Helpers/helperSearch";
 import { IProducts } from "@/interfaces/interfaces";
-import { notFound } from "next/navigation";
 import React from "react";
 
 
@@ -12,7 +11,7 @@ const Products = async  ({ params }: { params : Promise<{ search : string }> }) 
     const products: IProducts[] | undefined = await helperSearch(search);
 
     if (!products) {
-    notFound(); 
+        return <div className="title-400 text primar-800 text center font-bold"> Product not found </div>
 }
 
     return (
@@ -20,7 +19,7 @@ const Products = async  ({ params }: { params : Promise<{ search : string }> }) 
         <div>
     <div className="cursor-pointer my-4 md:my-5 lg:my-6 mx-0 lg:mx-15 flex flex-col h-40 items-center
     justify-center rounded-xl bg-secondary-800">
-    <span className="text-400 font-semibold text-center text-primary-50">
+    <span className="text-400 font-semibold text-center text-primary-50 animate-pulse">
     Innovation that transforms, technology that connects
     </span>
         </div>

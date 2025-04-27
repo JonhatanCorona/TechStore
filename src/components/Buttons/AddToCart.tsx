@@ -6,7 +6,7 @@ import { IProducts } from "@/interfaces/interfaces";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 
-// Asegúrate de que el componente reciba un producto como prop.
+
 interface AddToCartProps {
     product: IProducts;
 }
@@ -14,7 +14,7 @@ interface AddToCartProps {
 const AddToCart = ({ product }: AddToCartProps) => {
     const router = useRouter();
     const { user } = useAuth();
-    const { cart, setCart } = useCart(); // ⬅️ usar contexto
+    const { cart, setCart } = useCart(); 
 
     const handleAddToCart = () => {
         if (!user?.token) {
@@ -47,7 +47,6 @@ const AddToCart = ({ product }: AddToCartProps) => {
             return;
         }
 
-        // ✅ Actualizar estado global del carrito
         setCart([...cart, product]);
 
         Swal.fire({

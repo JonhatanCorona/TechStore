@@ -1,6 +1,6 @@
 import React from 'react';
 import { IProducts } from '@/interfaces/interfaces';
-import AddToCart from '../Buttons/AddToCart';
+import AddToCart from '../../components/Buttons/AddToCart';
 
 const DetailsProduct = ({ product }: { product: IProducts }) => {
   return (

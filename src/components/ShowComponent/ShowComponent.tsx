@@ -12,21 +12,18 @@ interface ShowComponentProps {
 const ShowComponent: React.FC<ShowComponentProps> = ({ children }) => {
     const pathname = usePathname();
 
-    // Verificación de rutas válidas
     const validRoutes = [
-        "/",  // Home
-        "/singIn",  // Sign-in page
-        "/register", // Register page
-        "/shoppingCart", // Shopping cart
-        "/myAccount/myProfile",  // My Profile page
-        "/myAccount/myOrders",  // My Orders page
+        "/",  
+        "/singIn",  
+        "/register", 
+        "/shoppingCart", 
+        "/myAccount/myProfile",  
+        "/myAccount/myOrders",  
     ];
 
-    // Verificación de rutas dinámicas
     const isProductPage = pathname?.startsWith("/products");
     const isProductDetail = pathname?.startsWith("/details/") && /\d+$/.test(pathname);
 
-    // Determina si se deben mostrar el Navbar y el Footer
     const showComponents = validRoutes.includes(pathname || "") || isProductDetail || isProductPage;
 
     return (

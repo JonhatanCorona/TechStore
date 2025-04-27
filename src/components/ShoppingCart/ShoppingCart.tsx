@@ -3,7 +3,6 @@
 import { useAuth } from '@/Context/Auth';
 import { useCart } from '@/Context/Cart';
 import { helperOrder } from '@/helpers/Helpers/helperCart';
-import { IProducts } from '@/interfaces/interfaces';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 

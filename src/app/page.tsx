@@ -1,5 +1,5 @@
 import Carousel from "@/components/Carousel/Carousel";
-import Product from "@/components/Products/Product";
+import Product from "@/serverComponents/Products/Product";
 
 
 export default function Home() {

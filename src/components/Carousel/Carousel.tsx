@@ -37,17 +37,15 @@ const promotions: IPromotion[] = [
 const Carousel = () => {
     const [index, setIndex] = useState<number>(0);
 
-    // Cambiar la promoción automáticamente cada 5 segundos
     useEffect(() => {
     const intervalId = setInterval(() => {
         setIndex((prevIndex) => (prevIndex + 1) % promotions.length);
-      }, 5000); // 5000 ms = 5 segundos
+    }, 5000); 
 
-      // Limpiar el intervalo cuando el componente se desmonte
+
     return () => clearInterval(intervalId);
     }, []);
 
-    // Función para cambiar a la siguiente promoción cuando el usuario haga clic
     const handleNext = (): void => {
     setIndex((prev) => (prev + 1) % promotions.length);
     };

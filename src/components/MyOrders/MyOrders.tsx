@@ -22,16 +22,16 @@ const MyOrders = () => {
 
 
   const handleGetOrder = async () => {
-    setIsLoading(true); // Activar el estado de carga
+    setIsLoading(true); 
     try {
       if (user?.token) {
-        const response = await helperGetOrder(user.token);  // Llamada a la API
-        setOrders(response);  // Guardar las órdenes en el estado
+        const response = await helperGetOrder(user.token);  
+        setOrders(response);  
       }
     } catch (error) {
       console.error("Error al obtener las órdenes:", error);
     } finally {
-      setIsLoading(false);  // Desactivar el estado de carga después de que la llamada termine
+      setIsLoading(false); 
     }
   };
 
@@ -55,8 +55,8 @@ const MyOrders = () => {
       <div className='title-500 font-bold text-primary-800 text-center mb-2'> My Orders </div>
       {isLoading ? (
         <div className="w-full flex flex-col px-2 lg:px-6 py-8 bg-secondary-50 rounded-none lg:rounded-x">
-          {/* Aquí puede ir un mensaje de carga o alguna animación de "Cargando" */}
-          <div className="text-center text-secondary-600 text-lg font-medium">
+
+          <div className="text-center text-secondary-600 text-lg font-medium animate-pulse">
             Loading...
           </div>
         </div>

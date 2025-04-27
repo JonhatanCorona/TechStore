@@ -1,9 +1,7 @@
-
 import React from "react";
 import Card from "../Card/Card"; 
-import Suscribe from "../Suscribe/Suscribe"
+import Suscribe from "../../components/Suscribe/Suscribe"
 import helperProduct from "@/helpers/Helpers/helperProduct";
-
 
 
 const Product = async () => {
@@ -18,7 +16,6 @@ const Product = async () => {
             <Card product={product} />
           </li>
   
-          {/* Insertar Suscribe cada 12 productos */}
           {(index + 1) % 16 === 0 && (
             <li className="col-span-full flex justify-center">
               <div className="w-full">

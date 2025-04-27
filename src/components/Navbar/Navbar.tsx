@@ -10,7 +10,6 @@ import Cookies from 'js-cookie';
 import { useCart } from '@/Context/Cart';
 
 
-
 const Navbar = () => {
   const router = useRouter()
   const pathname = usePathname();

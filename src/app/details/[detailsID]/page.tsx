@@ -1,8 +1,7 @@
 import React from "react";
 import { IProducts } from "@/interfaces/interfaces";
 import helperDetail from "@/helpers/Helpers/helperDetail";
-import DetailsProduct from "@/components/Details/Details";
-import { notFound } from "next/navigation";
+import DetailsProduct from "@/serverComponents/Details/Details";
 
 const Details = async ({ params }: { params: Promise<{ detailsID: number }> }) => {
 
@@ -12,7 +11,7 @@ const Details = async ({ params }: { params: Promise<{ detailsID: number }> }) =
   const product: IProducts | undefined = await helperDetail(detailsID.toString());
 
   if (!product) {
-    notFound(); // Si el producto es undefined, renderiza la página 404
+    return <div className="title-400 text primar-800 text center font-bold"> Product not found </div>
   }
 
   
