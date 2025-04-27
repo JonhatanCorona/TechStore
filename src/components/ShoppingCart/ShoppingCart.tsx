@@ -83,10 +83,16 @@ return (
         <span className="text-400 font-bold text-secondary-700">${totalCart.toFixed(2)}</span>
     </div>
 
-    <button onClick={handChekout}
-    className="mt-6 w-full bg-primary-800 hover:bg-gray-700 text-secondary-50 font-semibold py-2 px-4 rounded-lg 
-    transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl active:scale-95">
-        Proceed to Checkout
+    <button 
+    onClick={handChekout}
+    disabled={!cart || cart.length === 0}
+    className={`mt-6 w-full bg-primary-800 hover:bg-gray-700 text-secondary-50 font-semibold py-2 px-4 rounded-lg 
+    transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl active:scale-95 
+    ${!cart || cart.length === 0 
+    ? 'opacity-50 cursor-not-allowed' 
+    : 'hover:bg-gray-700 hover:scale-95 hover:shadow-xl active:scale-95'}
+`}>
+    Proceed to Checkout
     </button>
     </div>
 )
